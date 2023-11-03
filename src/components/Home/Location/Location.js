@@ -30,10 +30,10 @@ const Location = ({navigation}) => {
                         <Text style={{ fontSize: 14, fontWeight: 500, marginTop: 5 }}>Bhopal</Text>
                     </View>
                     <View style={{ flexDirection: "row", justifyContent: "space-between", width: "60%", rowGap: 10 }}>
-                        <TouchableOpacity style={styles.button}>
+                        <TouchableOpacity disabled={true} style={styles.button}>
                             <Text style={styles.buttonText}>TODAY</Text>
                         </TouchableOpacity>
-                        <TouchableOpacity style={styles.button}>
+                        <TouchableOpacity disabled={true} style={styles.button}>
                             <Text style={styles.buttonText}>TOMORROW</Text>
                         </TouchableOpacity>
                     </View>

@@ -113,7 +113,7 @@ const Bus = ({ navigation, name, type, seats, boardingTime, droppingTime, price 
                 top: 8,
                 alignItems: "flex-end",
                 shadowColor: '#000',
-                shadowOffset: { height: -2 },
+                shadowOffset: { height: -2, width: -1 },
                 shadowOpacity: 0.1,
                 shadowRadius: 0
             }}>

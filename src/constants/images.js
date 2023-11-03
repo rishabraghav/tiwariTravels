@@ -11,6 +11,39 @@ import ac from '/Users/rishabhraghav/Desktop/projects/tiwariTravels/src/assests/
 import nonAC from '/Users/rishabhraghav/Desktop/projects/tiwariTravels/src/assests/images/nonAC.png';
 import sleeper from '/Users/rishabhraghav/Desktop/projects/tiwariTravels/src/assests/images/sleeper.png';
 import seater from '/Users/rishabhraghav/Desktop/projects/tiwariTravels/src/assests/images/seater.png';
+import steeringWheel from '/Users/rishabhraghav/Desktop/projects/tiwariTravels/src/assests/images/steeringWheel.png'
+import male from '/Users/rishabhraghav/Desktop/projects/tiwariTravels/src/assests/images/male.png';
+import female from '/Users/rishabhraghav/Desktop/projects/tiwariTravels/src/assests/images/female.png';
+import ticket2 from "/Users/rishabhraghav/Desktop/projects/tiwariTravels/src/assests/images/ticket2.png";
+import offers from '/Users/rishabhraghav/Desktop/projects/tiwariTravels/src/assests/images/offers.png';
+import close from '/Users/rishabhraghav/Desktop/projects/tiwariTravels/src/assests/images/close.png';
+import phone from '/Users/rishabhraghav/Desktop/projects/tiwariTravels/src/assests/images/phone.png';
+import mail from '/Users/rishabhraghav/Desktop/projects/tiwariTravels/src/assests/images/mail.png';
+import QR from '/Users/rishabhraghav/Desktop/projects/tiwariTravels/src/assests/images/QR.webp';
+import busLogo from '/Users/rishabhraghav/Desktop/projects/tiwariTravels/src/assests/images/busLogo.png';
 
-
-export default {InitialSvg, bus, homeBG, reverse, calender, home, tickets, account, help, ac, nonAC, sleeper, seater}
+export default {
+    InitialSvg, 
+    bus, 
+    homeBG, 
+    reverse, 
+    calender, 
+    home, 
+    tickets, 
+    account, 
+    help, 
+    ac, 
+    nonAC, 
+    sleeper, 
+    seater, 
+    steeringWheel, 
+    male, 
+    female, 
+    ticket2,
+    offers,
+    close,
+    phone,
+    mail,
+    QR,
+    busLogo
+}

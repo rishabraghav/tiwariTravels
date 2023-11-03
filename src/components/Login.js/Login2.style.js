@@ -44,6 +44,7 @@ const styles = StyleSheet.create({
         borderBottomWidth: 1,
         borderBottomColor: "rgba(255, 255, 255, 0.50);",
         justifyContent: "flex-start",
+        alignItems: "center"
     },
     prefixText: {
         color: "white",

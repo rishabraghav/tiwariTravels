@@ -8,6 +8,10 @@ import Login3 from './src/components/Login.js/Login3';
 import Home from './src/components/Home/Home';
 import BusBooking from './src/components/busBooking/BusBooking';
 import SeatSelecting from './src/components/seatSelecting/SeatSelecting';
+import BoardingPointSelection from './src/components/boardingPointSelection/BoardingPointSelection';
+import ProceesPayment from './src/components/proceedPayment/ProceedPayment';
+import ConfirmPayment from './src/components/ConfirmPayment/ConfirmPayment';
+import Tickets from './src/components/Tickets/Tickets';
 
 
 
@@ -38,6 +42,10 @@ function App() {
           <Stack.Screen name="Home" component={Home} />
           <Stack.Screen name="BusBooking" component={BusBooking} />
           <Stack.Screen name="SeatSelecting" component={SeatSelecting} />
+          <Stack.Screen name="BoardingPointSelection" component={BoardingPointSelection} />
+          <Stack.Screen name="ProceedPayment" component={ProceesPayment} />
+          <Stack.Screen name="ConfirmPayment" component={ConfirmPayment} />
+          <Stack.Screen name="Tickets" component={Tickets} />
         </Stack.Navigator>
     </NavigationContainer>
 
