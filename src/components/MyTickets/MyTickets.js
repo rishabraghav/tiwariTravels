@@ -9,8 +9,8 @@ const MyTickets = ({ navigation, setActiveTab, activeTab }) => {
 
     console.log(tickets);
     return (
-        <SafeAreaView style={{ backgroundColor: "#B2D1FF", flex: 1 }}>
-            <View style={{ flexDirection: "row", justifyContent: "center", padding: 10, backgroundColor: "#0F214C" }}>
+        <SafeAreaView style={{ backgroundColor: "#FF6D38", flex: 1 }}>
+            <View style={{ flexDirection: "row", justifyContent: "center", padding: 10, backgroundColor: "#FF6D38" }}>
                 <TouchableOpacity style={{ paddingLeft: 10 }} onPress={() => navigation.goBack()}>
                     <Text style={{ fontSize: 25, color: "white" }}>←</Text>
                 </TouchableOpacity>

@@ -3,13 +3,15 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import QRCode from 'react-native-qrcode-svg';
 import images from "../../constants/images";
 import { tickets } from "../../constants/ticket";
+import Header from "../header/Header";
 const Tickets = ({navigation, route}) => {
     const { busName, boardingTime, droppingTime, boardingLocation, destination, selectedDate } = route.params;
     return (
-        <SafeAreaView style={{ backgroundColor: "#B2D1FF", flex: 1 }}>
-            <View style={styles.header}>
+        <SafeAreaView style={{ backgroundColor: "#FF6D38", flex: 1 }}>
+            {/* <View style={styles.header}>
                 <Text style={styles.headerText}>Confirm Details</Text>
-            </View>
+            </View> */}
+            <Header navigation={navigation} item1={busName} item2={`${boardingTime} - ${droppingTime}`} item3={selectedDate} item4={`${boardingLocation} - ${destination}`} />
             <ScrollView style={styles.container}>
                 <View style={styles.QRcontainer}>
                    <Image style={{height: 300, width: 300}} source={images.QR} resizeMode="contain"/>
@@ -67,7 +69,7 @@ const Tickets = ({navigation, route}) => {
 
             </ScrollView>
 
-            <TouchableOpacity onPress={()=> {navigation.navigate("Home"); tickets.push({busName, boardingTime, droppingTime, boardingLocation, destination, selectedDate})}} style={{bottom: 0, backgroundColor: "#0F214C", justifyContent: "center", alignItems: "center", padding: 20}}>
+            <TouchableOpacity onPress={()=> {navigation.navigate("Home"); tickets.push({busName, boardingTime, droppingTime, boardingLocation, destination, selectedDate})}} style={{bottom: 0, backgroundColor: "#1942f7", justifyContent: "center", alignItems: "center", padding: 20}}>
                         <Text style={{color: "white", fontSize: 14, fontWeight: 700}}>Go To Home</Text>
             </TouchableOpacity>
         </SafeAreaView>

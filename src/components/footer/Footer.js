@@ -28,7 +28,7 @@ const Footer = ({navigation, item1, item2, item3, item4, sort, setActiveTab, act
                 <Image style={{height: 30}} source={item4.image} />
                     <Text style={{ color: '#74747B', fontSize: 10 }}>{item4.name}</Text>
                 </TouchableOpacity>
-               {sort && <TouchableOpacity disabled={true} style={{ backgroundColor: "#0F214C", height: "100%", justifyContent: "center", alignItems: "center",}}>
+               {sort && <TouchableOpacity disabled={true} style={{ backgroundColor: "#1942f7", height: "100%", justifyContent: "center", alignItems: "center",}}>
                     <Text style={{color: "white", fontSize: 14, fontWeight: 600, padding: 20}}>SORT & {"\n"}FILTER</Text>
                 </TouchableOpacity>}
             </View>

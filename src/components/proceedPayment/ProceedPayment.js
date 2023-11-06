@@ -31,7 +31,7 @@ const ProceesPayment = ({ navigation, route }) => {
     };
 
     return (
-        <SafeAreaView style={{ backgroundColor: "#B2D1FF", flex: 1 }}>
+        <SafeAreaView style={{ backgroundColor: "#FF6D38", flex: 1 }}>
             <Header navigation={navigation} item1={busName} item2={`${boardingTime} - ${droppingTime}`} item3={selectedDate} item4={`${boardingLocation} - ${destination}`} />
 
             <ScrollView>

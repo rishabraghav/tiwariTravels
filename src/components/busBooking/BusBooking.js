@@ -87,7 +87,7 @@ const BusBooking = ({ navigation, route }) => {
 
 
     return (
-        <SafeAreaView style={{ backgroundColor: "#B2D1FF", flex: 1 }}>
+        <SafeAreaView style={{ backgroundColor: "#FF6D38", flex: 1 }}>
             <Header navigation={navigation} item1={`${boardingLocation} to ${destination}`} item2={selectedDate} item3={`${busesInfo.length} Buses`} />
 
             <ScrollView style={{backgroundColor: "#F5F5F5", flex: 1, marginTop: 30, }}>

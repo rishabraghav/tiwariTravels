@@ -11,7 +11,7 @@ const Calender = ({navigation, route}) => {
 
 
     return (
-        <SafeAreaView style={{ backgroundColor: "#B2D1FF", flex: 1 }}>
+        <SafeAreaView style={{ backgroundColor: "#FF6D38", flex: 1 }}>
         <View style={styles.container}>
             <Calendar
                 onDayPress={day => {
@@ -41,7 +41,7 @@ const styles = StyleSheet.create({
     },
     footer: {
         bottom: 0, 
-        backgroundColor: "#0F214C", 
+        backgroundColor: "#1942f7", 
         justifyContent: "center", 
         alignItems: "center", 
         padding: 20, 

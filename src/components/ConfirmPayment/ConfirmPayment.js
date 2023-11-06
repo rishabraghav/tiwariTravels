@@ -6,6 +6,7 @@ import images from "../../constants/images";
 import { useState } from "react";
 import { Overlay } from "react-native-elements";
 import PaymentGateway from "./PaymentGateway";
+import Header from "../header/Header";
 
 const data = [{
     name: "Siddhant Pandey",
@@ -28,15 +29,16 @@ const ConfirmPayment = ({ navigation, route }) => {
         setVisible(!visible);
     };
     return (
-        <SafeAreaView style={{ backgroundColor: "#B2D1FF", flex: 1 }}>
-            <View style={{ flexDirection: "row", justifyContent: "space-between", padding: 10, backgroundColor: "#0F214C" }}>
+        <SafeAreaView style={{ backgroundColor: "#FF6D38", flex: 1 }}>
+            {/* <View style={{ flexDirection: "row", justifyContent: "space-between", padding: 10, backgroundColor: "#0F214C" }}>
                 <TouchableOpacity onPress={() => navigation.goBack()}>
                     <Text style={{ fontSize: 25, color: "white" }}>←</Text>
                 </TouchableOpacity>
                 <View style={{ alignItems: "center", width: "100%", justifyContent: "center" }}>
                     <Text style={{ color: "white", fontWeight: 500, fontSize: 13 }}>Confirm Details</Text>
                 </View>
-            </View>
+            </View> */}
+            <Header navigation={navigation} item1={busName} item2={`${boardingTime} - ${droppingTime}`} item3={selectedDate} item4={`${boardingLocation} - ${destination}`} />
 
             <ScrollView style={styles.container}>
                 <View style={{ padding: 10 }}>
@@ -73,7 +75,7 @@ const ConfirmPayment = ({ navigation, route }) => {
 
             </ScrollView>
 
-            <TouchableOpacity onPress={toggleOverlay} style={{bottom: 0, backgroundColor: "#0F214C", justifyContent: "center", alignItems: "center", padding: 20}}>
+            <TouchableOpacity onPress={toggleOverlay} style={{bottom: 0, backgroundColor: "#1942f7", justifyContent: "center", alignItems: "center", padding: 20}}>
                         <Text style={{color: "white", fontSize: 14, fontWeight: 700}}>PAY NOW ₹820 →</Text>
             </TouchableOpacity>
             <Overlay isVisible={visible} overlayStyle={{borderRadius: 15}} onBackdropPress={toggleOverlay}>

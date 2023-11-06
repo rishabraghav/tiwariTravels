@@ -16,8 +16,8 @@ const ChooseCity = ({navigation, route}) => {
         navigation.navigate('Home')
     }
     return (
-        <SafeAreaView style={{ backgroundColor: "#B2D1FF", flex: 1 }}>
-            <View style={{ flexDirection: "row", justifyContent: "center", padding: 10, backgroundColor: "#0F214C" }}>
+        <SafeAreaView style={{ backgroundColor: "#FF6D38", flex: 1 }}>
+            <View style={{ flexDirection: "row", justifyContent: "center", padding: 10, backgroundColor: "#FF6D38" }}>
                 <TouchableOpacity style={{paddingLeft: 10}} onPress={() => navigation.goBack()}>
                     <Text style={{ fontSize: 25, color: "white" }}>←</Text>
                 </TouchableOpacity>
@@ -33,7 +33,7 @@ const ChooseCity = ({navigation, route}) => {
                 </View>
 
                 <View>
-                    <View style={{ backgroundColor: "#0F214C", padding: 15 }}>
+                    <View style={{ backgroundColor: "#FF6D38", padding: 15 }}>
                         <Text style={{ fontSize: 14, fontWeight: 400, color: "white" }}>Recently Search</Text>
                     </View>
                     <TouchableOpacity onPress={() => setCity('Seoni')} style={{justifyContent: "center", alignItems: "center", padding: 10, borderBottomWidth: 1, borderColor:"#DCDFE2"}}>
@@ -54,7 +54,7 @@ const ChooseCity = ({navigation, route}) => {
                     </TouchableOpacity>
                 </View>
                 <View>
-                <View style={{ backgroundColor: "#0F214C", padding: 15 }}>
+                <View style={{ backgroundColor: "#FF6D38", padding: 15 }}>
                         <Text style={{ fontSize: 14, fontWeight: 400, color: "white" }}>Popular Cities</Text>
                     </View>
                     <TouchableOpacity onPress={() => setCity('Bhopal')} style={{justifyContent: "center", alignItems: "center", padding: 10, borderBottomWidth: 1, borderColor:"#DCDFE2"}}>
