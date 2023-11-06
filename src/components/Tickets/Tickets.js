@@ -2,9 +2,9 @@ import { Image, ScrollView, StyleSheet, Text, TouchableOpacity, View } from "rea
 import { SafeAreaView } from "react-native-safe-area-context";
 import QRCode from 'react-native-qrcode-svg';
 import images from "../../constants/images";
-
+import { tickets } from "../../constants/ticket";
 const Tickets = ({navigation, route}) => {
-    const { name } = route.params;
+    const { busName, boardingTime, droppingTime, boardingLocation, destination, selectedDate } = route.params;
     return (
         <SafeAreaView style={{ backgroundColor: "#B2D1FF", flex: 1 }}>
             <View style={styles.header}>
@@ -24,11 +24,11 @@ const Tickets = ({navigation, route}) => {
                         Your Ticket
                     </Text>
                     <View style={styles.ticket}>
-                        <Text style={{fontSize: 16, fontWeight: 500}}>{name}</Text>
+                        <Text style={{fontSize: 16, fontWeight: 500}}>{busName}</Text>
                         <View style={{flexDirection: "row", justifyContent: "space-between", marginVertical: 12}}>
                             <View>
-                                <Text style={{fontSize: 10, fontWeight: 700}}>Chennai CMBT</Text>
-                                <Text style={{fontSize: 10, fontWeight: 500}}>oct 10, 5:50am</Text>
+                                <Text style={{fontSize: 10, fontWeight: 700}}>{boardingLocation}</Text>
+                                <Text style={{fontSize: 10, fontWeight: 500}}>{`${selectedDate}, ${boardingTime}`}</Text>
                             </View>
                             <View style={{flexDirection: "row", justifyContent: "center", alignItems: "center"}}>
                                 <Text style={{left: 10, color: "#C7C7C7"}}>o------</Text>
@@ -36,8 +36,8 @@ const Tickets = ({navigation, route}) => {
                                 <Text style={{right: 10, color: "#C7C7C7"}}>------o</Text>
                             </View>
                             <View>
-                                <Text style={{fontSize: 10, fontWeight: 700}}>Bengalore BS</Text>
-                                <Text style={{fontSize: 10, fontWeight: 500}}>Oct 10, 11:15am</Text>
+                                <Text style={{fontSize: 10, fontWeight: 700}}>{destination}</Text>
+                                <Text style={{fontSize: 10, fontWeight: 500}}>{`${selectedDate}, ${droppingTime}`}</Text>
                             </View>
                         </View>
 
@@ -67,7 +67,7 @@ const Tickets = ({navigation, route}) => {
 
             </ScrollView>
 
-            <TouchableOpacity onPress={()=> navigation.navigate("Home")} style={{bottom: 0, backgroundColor: "#0F214C", justifyContent: "center", alignItems: "center", padding: 20}}>
+            <TouchableOpacity onPress={()=> {navigation.navigate("Home"); tickets.push({busName, boardingTime, droppingTime, boardingLocation, destination, selectedDate})}} style={{bottom: 0, backgroundColor: "#0F214C", justifyContent: "center", alignItems: "center", padding: 20}}>
                         <Text style={{color: "white", fontSize: 14, fontWeight: 700}}>Go To Home</Text>
             </TouchableOpacity>
         </SafeAreaView>

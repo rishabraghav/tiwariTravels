@@ -12,6 +12,9 @@ import BoardingPointSelection from './src/components/boardingPointSelection/Boar
 import ProceesPayment from './src/components/proceedPayment/ProceedPayment';
 import ConfirmPayment from './src/components/ConfirmPayment/ConfirmPayment';
 import Tickets from './src/components/Tickets/Tickets';
+import ChooseCity from './src/components/ChooseCity/ChooseCity';
+import Calender from './src/components/Calender/Calender';
+import MyTickets from './src/components/MyTickets/MyTickets';
 
 
 
@@ -46,6 +49,9 @@ function App() {
           <Stack.Screen name="ProceedPayment" component={ProceesPayment} />
           <Stack.Screen name="ConfirmPayment" component={ConfirmPayment} />
           <Stack.Screen name="Tickets" component={Tickets} />
+          <Stack.Screen name="ChooseCity" component={ChooseCity} />
+          <Stack.Screen name="Calender" component={Calender} />
+          <Stack.Screen name="MyTickets" component={MyTickets} />
         </Stack.Navigator>
     </NavigationContainer>
 

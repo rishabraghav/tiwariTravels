@@ -3,7 +3,7 @@ import calculateTimeDifference from '../../constants/calculateTimeDifference';
 // import { Dimensions } from 'react-native';
 // const screenWidth = Dimensions.get('window').width;
 
-const Bus = ({ navigation, name, type, seats, boardingTime, droppingTime, price }) => {
+const Bus = ({ navigation, busName, type, seats, boardingTime, droppingTime, price, boardingLocation, destination, selectedDate }) => {
     // Common styles
     const containerStyle = {
         backgroundColor: 'white',
@@ -95,11 +95,13 @@ const Bus = ({ navigation, name, type, seats, boardingTime, droppingTime, price 
 
     const handlePress = () => {
         navigation.push('SeatSelecting', {
-            name, 
+            busName, 
             seats,
             boardingTime,
             droppingTime,
-            price
+            price,
+            boardingLocation,
+            destination, selectedDate,
         })
     }
 
@@ -122,7 +124,7 @@ const Bus = ({ navigation, name, type, seats, boardingTime, droppingTime, price 
             <View style={containerStyle}>
                 <View style={rowContainerStyle}>
                     <View style={textContainerStyle}>
-                        <Text style={{ color: 'rgba(44, 47, 46, 1)', fontSize: 14 }}>{name}</Text>
+                        <Text style={{ color: 'rgba(44, 47, 46, 1)', fontSize: 14 }}>{busName}</Text>
                         <Text style={{ color: 'rgba(120, 124, 123, 1)', fontSize: 12, fontWeight: '400' }}>{type}</Text>
                     </View>
                     <View style={seatContainerStyle}>
@@ -146,7 +148,7 @@ const Bus = ({ navigation, name, type, seats, boardingTime, droppingTime, price 
                     <Text style={timeTextStyle}>{droppingTime}</Text>
                 </View>
 
-                <View style={priceContainerStyle}>
+                <TouchableOpacity disabled={seats == 0} onPress={handlePress} style={priceContainerStyle}>
                     <Text style={priceTextStyle}>₹{price}</Text>
                     <TouchableOpacity disabled={seats == 0} onPress={handlePress}>
                         <Text style={arrowTextStyle}>
@@ -154,7 +156,7 @@ const Bus = ({ navigation, name, type, seats, boardingTime, droppingTime, price 
                         </Text>
                     </TouchableOpacity>
 
-                </View>
+                </TouchableOpacity>
             </View>
             <View style={{
                 backgroundColor: seats == 0 ? "rgba(255, 94, 94, 1)" : "rgba(178, 209, 255, 1)",

@@ -1,7 +1,7 @@
 import { TouchableOpacity, View, Text, Image, StyleSheet } from "react-native";
 
 
-const SeatFooter = ({navigation, name, boardingTime, droppingTime}) => {
+const SeatFooter = ({navigation, busName, boardingTime, droppingTime, boardingLocation, destination, selectedDate}) => {
     return (
         <View style={styles.footer}>
             <View style={{ flexDirection: "row", padding: 10, justifyContent: "space-between", backgroundColor: "white" }}>
@@ -12,7 +12,7 @@ const SeatFooter = ({navigation, name, boardingTime, droppingTime}) => {
             style={{padding: 15, backgroundColor: "rgba(15, 33, 76, 1)", justifyContent: "center", alignItems: "center"}}
                 
                 onPress={() => navigation.push("BoardingPointSelection", {
-                    name, boardingTime, droppingTime
+                    busName, boardingTime, droppingTime, boardingLocation, destination, selectedDate
                 })}
                 >
                 <Text style={{color: "white", fontSize: 14, fontWeight: 600}}>

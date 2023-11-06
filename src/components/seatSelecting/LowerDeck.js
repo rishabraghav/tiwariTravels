@@ -93,6 +93,7 @@ const styles = StyleSheet.create({
         width: screenWidth - 50,
         marginHorizontal: 10,
         paddingVertical: 5,
+        marginVertical: 10,
     },
     heading: {
         flexDirection: "row",

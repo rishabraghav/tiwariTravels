@@ -3,14 +3,16 @@ import styles from "./Home.style";
 import images from '../../constants/images';
 import Footer from "../footer/Footer";
 import Location from "./Location/Location";
+import { useState } from "react";
+import MyTickets from "../MyTickets/MyTickets";
 
 const Home = ({ navigation }) => {
-    const handleButtonPress = (buttonName) => {
-        // Handle button press, you can navigate to other screens or perform actions
-        console.log(`Button pressed: ${buttonName}`);
-    };
+    
+    const [activeTab, setActiveTab] = useState("Home")
+
     return (
-        <View style={styles.container}>
+        <>
+        {activeTab == "Home"? <View style={styles.container}>
             <ImageBackground source={images.homeBG} resizeMode="cover" style={styles.bgImage} />
             <View style={styles.loginButtonContainer}>
                 <View>
@@ -20,11 +22,15 @@ const Home = ({ navigation }) => {
             </View>
            <Location navigation={navigation} />
             <Footer 
-            item1={{image: images.home, name: "Home"}} 
-            item2={{image: images.tickets, name: "My Tickets"}} 
+            navigation={navigation}
+            activeTab={activeTab}
+            setActiveTab={setActiveTab}
+            item1={{ image: activeTab == "Home"? images.homeActive : images.home, name: "Home" }}
+            item2={{ image: activeTab == "My Tickets"? images.ticketsActive : images.tickets, name: "My Tickets" }}
             item3={{image: images.help, name: "Help"}} 
             item4={{image: images.account, name: "Account"}} />
-        </View>
+        </View>: <MyTickets navigation={navigation} setActiveTab={setActiveTab} activeTab={activeTab}/>}
+        </>
     );
 }
 

@@ -3,12 +3,12 @@ import { ActivityIndicator } from "react-native";
 
 const { View, Text } = require("react-native")
 
-const PaymentGateway = ({navigation, toggleOverlay, name}) => {
+const PaymentGateway = ({navigation, toggleOverlay, busName, boardingTime, droppingTime, boardingLocation, destination, selectedDate}) => {
 
     useEffect(() => {
         setTimeout(()=> {
             toggleOverlay();
-            navigation.navigate("Tickets", {name})
+            navigation.navigate("Tickets", {busName,   boardingTime, droppingTime, boardingLocation, destination, selectedDate})
         }, 3000)
     }, [])
     return ( 

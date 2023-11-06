@@ -21,7 +21,7 @@ const data = [{
 }]
 
 const ConfirmPayment = ({ navigation, route }) => {
-    const { name } = route.params;
+    const { busName,  boardingTime, droppingTime, boardingLocation, destination, selectedDate } = route.params;
     const [visible, setVisible] = useState(false);
 
     const toggleOverlay = () => {
@@ -41,7 +41,10 @@ const ConfirmPayment = ({ navigation, route }) => {
             <ScrollView style={styles.container}>
                 <View style={{ padding: 10 }}>
                     <Text style={{ margin: 10, fontSize: 13, fontWeight: 500 }}>Journey Details</Text>
-                    <BoardingDetailsCard />
+                    <BoardingDetailsCard 
+                        boardingTime={boardingTime}
+                        droppingTime={droppingTime}
+                        selectedDate={selectedDate}  />
                 </View>
                 <View style={styles.horizontalLine} />
 
@@ -74,7 +77,13 @@ const ConfirmPayment = ({ navigation, route }) => {
                         <Text style={{color: "white", fontSize: 14, fontWeight: 700}}>PAY NOW ₹820 →</Text>
             </TouchableOpacity>
             <Overlay isVisible={visible} overlayStyle={{borderRadius: 15}} onBackdropPress={toggleOverlay}>
-                <PaymentGateway toggleOverlay={toggleOverlay} navigation={navigation} name={name} />
+                <PaymentGateway toggleOverlay={toggleOverlay} navigation={navigation} 
+                busName={busName}
+                boardingTime={boardingTime}
+                droppingTime={droppingTime}
+                boardingLocation={boardingLocation} 
+                destination={destination}
+                selectedDate={selectedDate}  />
             </Overlay>
         </SafeAreaView>
     );

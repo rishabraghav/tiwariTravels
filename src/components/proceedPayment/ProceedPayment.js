@@ -15,8 +15,10 @@ import PriceBreakup from "./PriceBreakup";
 const data = [1, 2]
 
 const ProceesPayment = ({ navigation, route }) => {
-    const { name, boardingTime, droppingTime } = route.params;
+    const { busName, boardingTime, droppingTime, boardingLocation, destination, selectedDate  } = route.params;
     const [checked, setChecked] = useState(false);
+
+    const [travellerDetails, setTravellerDetails] = useState([]);
 
     const toggleCheckbox = () => {
         setChecked(!checked);
@@ -30,12 +32,15 @@ const ProceesPayment = ({ navigation, route }) => {
 
     return (
         <SafeAreaView style={{ backgroundColor: "#B2D1FF", flex: 1 }}>
-            <Header navigation={navigation} item1={name} item2={`${boardingTime} - ${droppingTime}`} item3={"26 MAY"} item4={"Varanasi - Indore"} />
+            <Header navigation={navigation} item1={busName} item2={`${boardingTime} - ${droppingTime}`} item3={selectedDate} item4={`${boardingLocation} - ${destination}`} />
 
             <ScrollView>
                 <View style={styles.container}>
                     <View style={{bottom: 20}}>
-                    <BoardingDetailsCard />
+                    <BoardingDetailsCard 
+                        boardingTime={boardingTime}
+                        droppingTime={droppingTime}
+                        selectedDate={selectedDate}  />
                     </View>
                    
 
@@ -43,7 +48,7 @@ const ProceesPayment = ({ navigation, route }) => {
                     <View>
                         <Text style={{ margin: 10 }}>Total Traveller(s): {data.length}</Text>
                         <FlatList data={data} renderItem={({ item }) => (
-                            <Traveller item={item} />
+                            <Traveller item={item} setTravellerDetails={setTravellerDetails} />
                         )} />
                     </View>
 
@@ -80,7 +85,7 @@ const ProceesPayment = ({ navigation, route }) => {
                             </View>
                         </View>
                         <View style={{ justifyContent: "center" }}>
-                            <TouchableOpacity onPress={() => navigation.push("ConfirmPayment", { name, boardingTime, droppingTime })} style={{ backgroundColor: "rgba(15, 33, 76, 1)", padding: 10, borderRadius: 5 }}>
+                            <TouchableOpacity onPress={() => navigation.push("ConfirmPayment", { busName, boardingTime, droppingTime, boardingLocation, destination, selectedDate  })} style={{ backgroundColor: "#1942f7", padding: 10, borderRadius: 5 }}>
                                 <Text style={{ color: "white" }}>PAY NOW →</Text>
                             </TouchableOpacity>
                         </View>

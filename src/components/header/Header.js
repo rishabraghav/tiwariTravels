@@ -4,7 +4,7 @@ import { Text, TouchableOpacity, View } from "react-native";
 
 const Header = ({navigation, item1, item2, item3, item4}) => {
     return ( 
-        <View style={{flexDirection: "row", justifyContent: "space-between", padding: 10, backgroundColor: "#0F214C"}}>
+        <View style={{flexDirection: "row", justifyContent: "space-between", padding: 10, backgroundColor: "#FF6D38"}}>
                 <TouchableOpacity onPress={()=> navigation.goBack()}>
                     <Text style={{fontSize: 25, color: "white"}}>←</Text>
                 </TouchableOpacity>

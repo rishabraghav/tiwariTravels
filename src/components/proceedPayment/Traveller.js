@@ -1,7 +1,22 @@
 import { Image, StyleSheet, Text, TextInput, TouchableOpacity, View } from "react-native";
 import images from "../../constants/images";
+import { useState } from "react";
 
-const Traveller = ({ item }) => {
+const Traveller = ({ item, setTravellerDetails }) => {
+    const [name, setName] = useState(null);
+    const [age, setAge] = useState(null);
+    const [activeGender, setActiveGender] = useState("male")
+
+    const traveller =  {
+        name, 
+        age,
+        activeGender,
+    }
+
+    // const handleChange = () => {
+        
+    // }
+
     return (
         <View style={styles.card}>
             <View style={{ flexDirection: "row", justifyContent: "space-between", borderBottomWidth: 1, borderBottomColor: "rgba(214, 216, 228, 1)" }}>
@@ -11,20 +26,20 @@ const Traveller = ({ item }) => {
                 </View>
             </View>
             <View style={styles.nameConatiner}>
-                <TextInput style={{ height: 40, padding: 10 }} placeholder="Full Name" />
+                <TextInput style={{ height: 40, padding: 10 }} value={name} onChangeText={(text) => {setName(text);}} placeholder="Full Name" />
             </View>
             <View style={{ flexDirection: "row" }}>
                 <View style={styles.ageConatiner}>
-                    <TextInput style={{ height: 40, padding: 10 }} placeholder="Age" />
+                    <TextInput style={{ height: 40, padding: 10 }} value={age} onChangeText={(text) => {setAge(text);}} placeholder="Age" />
                 </View>
                 <View style={styles.genderContainer}>
-                    <TouchableOpacity style={styles.genderButton}>
+                    <TouchableOpacity onPress={() => {setActiveGender("female");}} style={styles.genderButton("female", activeGender)}>
                         <Image style={styles.imageCard} source={images.female} resizeMode="contain" />
-                        <Text style={styles.genderButtonText}>Female</Text>
+                        <Text style={styles.genderButtonText("female", activeGender)}>Female</Text>
                     </TouchableOpacity>
-                    <TouchableOpacity style={styles.genderButton}>
+                    <TouchableOpacity onPress={() => {setActiveGender("male");}} style={styles.genderButton("male", activeGender)}>
                         <Image style={styles.imageCard} source={images.male} resizeMode="contain" />
-                        <Text style={styles.genderButtonText}>Male</Text>
+                        <Text style={styles.genderButtonText("male", activeGender)}>Male</Text>
                     </TouchableOpacity>
                 </View>
             </View>
@@ -70,21 +85,23 @@ const styles = StyleSheet.create({
         width: "50%",
         flexDirection: "row"
     },
-    genderButton: {
+    genderButton: (name, activeGender) => ({
         flexDirection: "row",
-        justifyContent: "space-between",
+        // justifyContent: "space-between",
+        backgroundColor: name == activeGender? "#0F214C": "white",
         alignItems: "center",
         width: "45%",
         margin: 5,
         borderRadius: 6,
         borderWidth: 1,
         borderColor: "rgba(159, 159, 159, 1)"
-    },
-    genderButtonText: {
+    }),
+    genderButtonText: (name, activeGender) => ({
         fontSize: 10,
         fontWeight: 400,
-        margin: 4
-    },
+        margin: 4,
+        color: name == activeGender? "white" : "black",
+    }),
     imageCard: {
         height: 25,
         borderWidth: 1,

@@ -6,14 +6,14 @@ import Unorderedlist from 'react-native-unordered-list';
 const screenWidth = Dimensions.get('window').width;
 
 const BoardingPointSelection = ({ navigation, route }) => {
-    const { name, boardingTime, droppingTime } = route.params;
+    const { busName, boardingTime, droppingTime, boardingLocation, destination, selectedDate } = route.params;
     const handleItemPress = (item) => {
         // Handle the press of a list item
         console.log(`Selected: ${item}`);
     };
     return (
         <SafeAreaView style={{backgroundColor: "#B2D1FF", flex: 1,}}>
-            <Header navigation={navigation} item1={name} item2={`${boardingTime} - ${droppingTime}`} item3={"26 MAY"} item4={"Varanasi - Indore"} />
+            <Header navigation={navigation} item1={busName} item2={`${boardingTime} - ${droppingTime}`} item3={selectedDate} item4={`${boardingLocation} - ${destination}`} />
             <View style={{backgroundColor: "white", height: "100%"}}>
                 <View style={{
                     flexDirection: "row",
@@ -82,7 +82,7 @@ const BoardingPointSelection = ({ navigation, route }) => {
                 </View>
             </View>
             <TouchableOpacity style={{bottom: 0, position: "absolute", padding: 30, backgroundColor:"rgba(15, 33, 76, 1)", width: screenWidth, justifyContent:"center", alignItems:"center"}}
-                onPress={() => navigation.push("ProceedPayment",{ name, boardingTime, droppingTime })}
+                onPress={() => navigation.push("ProceedPayment",{ busName, boardingTime, droppingTime, boardingLocation, destination, selectedDate })}
                 >
                 <Text style={{color: "white", fontWeight: 600, fontSize: 14}}>
                 PROCEED

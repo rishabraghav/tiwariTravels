@@ -21,6 +21,9 @@ import phone from '/Users/rishabhraghav/Desktop/projects/tiwariTravels/src/asses
 import mail from '/Users/rishabhraghav/Desktop/projects/tiwariTravels/src/assests/images/mail.png';
 import QR from '/Users/rishabhraghav/Desktop/projects/tiwariTravels/src/assests/images/QR.webp';
 import busLogo from '/Users/rishabhraghav/Desktop/projects/tiwariTravels/src/assests/images/busLogo.png';
+import search from '/Users/rishabhraghav/Desktop/projects/tiwariTravels/src/assests/images/search.png';
+import homeActive from '/Users/rishabhraghav/Desktop/projects/tiwariTravels/src/assests/images/homeActive.png';
+import ticketsActive from '/Users/rishabhraghav/Desktop/projects/tiwariTravels/src/assests/images/ticketsActive.png';
 
 export default {
     InitialSvg, 
@@ -45,5 +48,8 @@ export default {
     phone,
     mail,
     QR,
-    busLogo
+    busLogo,
+    search,
+    homeActive,
+    ticketsActive
 }
